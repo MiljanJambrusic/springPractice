@@ -28,8 +28,11 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    
     private String title;
     private String isbn;
+    
     @OneToOne
     private Publisher publisher;
     
@@ -94,6 +97,15 @@ public class Book {
     public String toString() {
         return "Book{" + "id=" + id + ", title=" + title + ", isbn=" + isbn + ", publisher=" + publisher + ", authors=" + authors + '}';
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
 
     @Override
     public boolean equals(Object obj) {
